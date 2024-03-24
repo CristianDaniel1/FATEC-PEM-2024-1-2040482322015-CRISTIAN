@@ -9,6 +9,7 @@ int main(void)
   char tabuleiro[MAXLIN][MAXCOL][4];
   char peca[4];
   char numChar[2];
+  char cor[4];
   char *pecas[] = {"T1", "C1", "B1", "D ", "R ", "B2", "C2", "T2"};
 
   int lin;
@@ -24,7 +25,7 @@ int main(void)
       if(lin < 2 || lin >= 6) {
         lin < 2 ? strcpy(peca, "P") : strcpy(peca, "B");
         
-        if (lin == 1 || lin == MAXLIN - 2) {
+        if(lin == 1 || lin == MAXLIN - 2) {
           strcat(peca, "P");
 
           sprintf(numChar, "%i", col+1);
@@ -36,8 +37,15 @@ int main(void)
         strcpy(tabuleiro[lin][col], peca);
       } 
       
-      if(lin >= 2 && lin < 6) 
-        strcpy(tabuleiro[lin][col], " X ");
+      if(lin >= 2 && lin < 6) {
+        
+        if(lin % 2 == 0) 
+          col % 2 == 0 ? strcpy(cor, " - ") : strcpy(cor, " X ");
+        else 
+          col % 2 == 0 ? strcpy(cor, " X ") : strcpy(cor, " - ");
+        
+        strcpy(tabuleiro[lin][col], cor);
+      }
       
       printf(" %s ", tabuleiro[lin][col]);
     }
