@@ -1,53 +1,50 @@
 #include <stdio.h>
 #include <string.h>
 
-#define LIN 8
-#define COL 8
+#define MAXLIN 8
+#define MAXCOL 8
 
 int main(void)
 {
-  char tabuleiro[LIN][COL][5];
-  char peca[5];
+  char tabuleiro[MAXLIN][MAXCOL][4];
+  char peca[4];
   char numChar[2];
   char *pecas[] = {"T1", "C1", "B1", "D ", "R ", "B2", "C2", "T2"};
-  char *cols[] = {"a", "b", "c", "d", "e", "f", "g", "h"};
-  
-  int i;
-  int j;
+
+  int lin;
+  int col;
 
   printf(" =-=-=-=-= TABULEIRO DE XADREZ =-=-=-=-=\n\n");
   
-  for(i = 0; i < LIN; i++) {
+  for(lin = 0; lin < MAXLIN; lin++) {
     
-    printf(" %i", i+1);
-    for(j = 0; j < COL; j++) {
+    printf(" %i", lin+1);
+    for(col = 0; col < MAXCOL; col++) {
     
-      if(i < 2 || i >= 6) {
-        i < 2 ? strcpy(peca, "P") : strcpy(peca, "B");
+      if(lin < 2 || lin >= 6) {
+        lin < 2 ? strcpy(peca, "P") : strcpy(peca, "B");
         
-        if (i == 1 || i == LIN - 2) {
+        if (lin == 1 || lin == MAXLIN - 2) {
           strcat(peca, "P");
 
-          sprintf(numChar, "%i", j+1);
+          sprintf(numChar, "%i", col+1);
           strcat(peca, numChar);
         } else {
-          strcat(peca, pecas[j]);
+          strcat(peca, pecas[col]);
         }
         
-        strcpy(tabuleiro[i][j], peca);
+        strcpy(tabuleiro[lin][col], peca);
       } 
       
-      if(i >= 2 && i < 6) 
-        strcpy(tabuleiro[i][j], " X ");
+      if(lin >= 2 && lin < 6) 
+        strcpy(tabuleiro[lin][col], " X ");
       
-      printf(" %s ", tabuleiro[i][j]);
+      printf(" %s ", tabuleiro[lin][col]);
     }
     printf("\n");
   }
   
-  printf("  ");
-  for(i = 0; i < COL; i++)
-    printf("  %s  ", cols[i]);
-
+  printf("    a    b    c    d    e    f    g    h");
+  
   return 0;
 }
