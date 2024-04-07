@@ -19,7 +19,7 @@ int main(void)
   
   for(lin = 0; lin < MAXLIN; lin++) {
     
-    printf(" %i", lin+1);
+    printf(" %i", (8 - lin));
     for(col = 0; col < MAXCOL; col++) {
     
       if(lin < 2 || lin >= 6) {
