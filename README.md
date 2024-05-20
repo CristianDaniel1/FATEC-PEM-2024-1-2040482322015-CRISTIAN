@@ -20,6 +20,7 @@ Este é um repositório de entrega das atividades realizadas em linguagem C para
 - **Atividade-b1-3**: Tabuleiro de Xadrez utilizando arrays multidimensionais e manipulação de "strings".
 - **Atividade-b2-1**: Calculadora com as 4 operações básicas da matemática. Tem como propósito aplicar os conceitos de Modularização.
 - **Atividade-b2-2**: Simulação de Calculadora HP12c, utilizando a Estrutura Pilha. Neste existe 2 versões, uma com a struct pilha e outro com uma array simulando a pilha.
+- **Atividade-b2-3**: Programa de listagem de alunos e suas respectivas notas, na ordem alfabética. Para isso, foi criado uma função BubbleSort.
 
 ## Licença
 
