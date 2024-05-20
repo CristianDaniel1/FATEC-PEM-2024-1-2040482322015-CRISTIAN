@@ -4,6 +4,15 @@
 
 Este é um repositório de entrega das atividades realizadas em linguagem C para a disciplina de Programação Estruturada e Modular.
 
+## Conceitos utilizados
+
+- Arrays multidimensionais
+- Manipulação de Strings
+- Modularização
+- Structs
+- Pilha
+- Ponteiros
+
 ## Atividades
 
 - **Atividade-b1-1**: Cálculo de notas obtidas por candidatos a um estágio, com a utilização de arrays.
@@ -11,3 +20,7 @@ Este é um repositório de entrega das atividades realizadas em linguagem C para
 - **Atividade-b1-3**: Tabuleiro de Xadrez utilizando arrays multidimensionais e manipulação de "strings".
 - **Atividade-b2-1**: Calculadora com as 4 operações básicas da matemática. Tem como propósito aplicar os conceitos de Modularização.
 - **Atividade-b2-2**: Simulação de Calculadora HP12c, utilizando a Estrutura Pilha. Neste existe 2 versões, uma com a struct pilha e outro com uma array simulando a pilha.
+
+## Licença
+
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
