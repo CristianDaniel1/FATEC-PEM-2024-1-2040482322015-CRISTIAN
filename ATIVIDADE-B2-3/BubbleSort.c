@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 
+#define MAXNAME 50
+#define MAXALUNO 50
 
 typedef struct {
-  char nome[50];
+  char nome[MAXNAME];
   char status[20];
   float notaFinal;
 } Aluno;
@@ -15,7 +17,7 @@ void listarAlunos(Aluno alunos[], int tam);
 
 int main(void)
 {
-  Aluno alunos[50];
+  Aluno alunos[MAXALUNO];
 
   menuAluno(alunos);
   
