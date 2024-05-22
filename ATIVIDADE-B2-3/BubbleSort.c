@@ -14,6 +14,8 @@ void bubbleSort(Aluno alunos[], int tam);
 void menuAluno(Aluno alunos[]);
 void addAluno(Aluno alunos[], int pos);
 void listarAlunos(Aluno alunos[], int tam);
+float notaAluno(void);
+
 
 int main(void)
 {
@@ -71,17 +73,13 @@ void menuAluno(Aluno alunos[]) {
 
 void addAluno(Aluno alunos[], int pos) {
   Aluno novoAluno;
-  float notaFinal;
   
   printf("Nome: ");
   scanf("%s", novoAluno.nome);
   
-  printf("Nota final: ");
-  scanf("%f", &notaFinal);
-  
-  novoAluno.notaFinal = notaFinal;
+  novoAluno.notaFinal = notaAluno();
 
-  if (notaFinal >= 6)
+  if (novoAluno.notaFinal >= 6)
     strcpy(novoAluno.status, "Aprovado");
   else
     strcpy(novoAluno.status, "Reprovado");
@@ -102,4 +100,18 @@ void listarAlunos(Aluno alunos[], int tam) {
   }
   
   printf("\n");
+}
+
+float notaAluno(void) {
+  float notaFinal;
+
+  printf("Nota final: ");
+  scanf("%f", &notaFinal);
+
+  while (notaFinal < 0 || notaFinal > 10) {
+    printf("Nota invalida!\nNota final: ");
+    scanf("%f", &notaFinal);
+  }
+
+  return notaFinal;
 }
