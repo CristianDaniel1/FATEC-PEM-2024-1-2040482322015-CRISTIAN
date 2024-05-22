@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 #define MAXNAME 50
 #define MAXALUNO 50
@@ -11,11 +12,11 @@ typedef struct {
 } Aluno;
 
 void bubbleSort(Aluno alunos[], int tam);
+void lowerCase(char nome[]);
 void menuAluno(Aluno alunos[]);
 void addAluno(Aluno alunos[], int pos);
 void listarAlunos(Aluno alunos[], int tam);
 float notaAluno(void);
-
 
 int main(void)
 {
@@ -39,6 +40,14 @@ void bubbleSort(Aluno alunos[], int tam) {
       }
     }
   }
+}
+
+void lowerCase(char *nome) {
+  int tamanho; 
+  tamanho = strlen(nome);
+
+  for (int i = 0; i < tamanho; i++) 
+    nome[i] = tolower(nome[i]);
 }
 
 void menuAluno(Aluno alunos[]) {
@@ -77,6 +86,7 @@ void addAluno(Aluno alunos[], int pos) {
   printf("Nome: ");
   scanf("%s", novoAluno.nome);
   
+  lowerCase(novoAluno.nome);
   novoAluno.notaFinal = notaAluno();
 
   if (novoAluno.notaFinal >= 6)
