@@ -2,11 +2,11 @@
 #include <string.h>
 #include <ctype.h>
 
-#define MAXNAME 50
-#define MAXALUNO 50
+#define MAX_NAME 50
+#define MAX_ALUNO 50
 
 typedef struct {
-  char nome[MAXNAME];
+  char nome[MAX_NAME];
   char status[20];
   float notaFinal;
 } Aluno;
@@ -17,10 +17,11 @@ void menuAluno(Aluno alunos[]);
 void addAluno(Aluno alunos[], int pos);
 void listarAlunos(Aluno alunos[], int tam);
 float notaAluno(void);
+void limparBufferEntrada(void);
 
 int main(void)
 {
-  Aluno alunos[MAXALUNO];
+  Aluno alunos[MAX_ALUNO];
 
   menuAluno(alunos);
   
@@ -51,11 +52,8 @@ void lowerCase(char *nome) {
 }
 
 void menuAluno(Aluno alunos[]) {
-  int opcao;
-  int numAluno;
-
-  opcao = 0;
-  numAluno = 0;
+  int opcao = 0;
+  int numAluno = 0;
 
   while (opcao != 3) {
     printf("======================\n");
@@ -64,29 +62,43 @@ void menuAluno(Aluno alunos[]) {
     printf("  3: Sair\n");
     printf("======================\n");
     
+    printf("Escolha uma opcao: ");
     scanf("%i", &opcao);
+    getchar();
 
     if (opcao == 1) {
       addAluno(alunos, numAluno);
-      
       numAluno++;
     } else if (opcao == 2) {
       listarAlunos(alunos, numAluno);
     } else if (opcao != 3) {
-      printf("Opçao invalida.\nTente novamente\n\n");
-      
-      continue;
+      printf("Opção inválida.\nTente novamente\n\n");
     }
   }
+
+  printf("\nPrograma finalizado.\n");
 }
 
 void addAluno(Aluno alunos[], int pos) {
   Aluno novoAluno;
+  char nome[MAX_NAME];
+
+  if (pos >= MAX_ALUNO) {
+    printf("Lista de alunos excedida.\n");
+    return;
+  }
   
   printf("Nome: ");
-  scanf("%s", novoAluno.nome);
-  
+  fgets(nome, sizeof(nome), stdin);
+
+  if (nome[strlen(nome) - 1] != '\n')
+    limparBufferEntrada();
+  else
+    nome[strcspn(nome, "\n")] = '\0';
+
+  strcpy(novoAluno.nome, nome);
   lowerCase(novoAluno.nome);
+
   novoAluno.notaFinal = notaAluno();
 
   if (novoAluno.notaFinal >= 6)
@@ -119,9 +131,15 @@ float notaAluno(void) {
   scanf("%f", &notaFinal);
 
   while (notaFinal < 0 || notaFinal > 10) {
-    printf("Nota invalida!\nNota final: ");
+    printf("Nota inválida!\nNota final: ");
     scanf("%f", &notaFinal);
   }
+  getchar();
 
   return notaFinal;
+}
+
+void limparBufferEntrada(void) {
+  int c;
+  while ((c = getchar()) != '\n' && c != EOF);
 }
