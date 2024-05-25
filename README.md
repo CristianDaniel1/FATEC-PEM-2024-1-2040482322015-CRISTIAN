@@ -21,6 +21,7 @@ Este é um repositório de entrega das atividades realizadas em linguagem C para
 - **Atividade-b2-1**: Calculadora com as 4 operações básicas da matemática. Tem como propósito aplicar os conceitos de Modularização.
 - **Atividade-b2-2**: Simulação de Calculadora HP12c, utilizando a Estrutura Pilha. Neste existe 2 versões, uma com a struct pilha e outro com uma array simulando a pilha.
 - **Atividade-b2-3**: Programa de listagem de alunos e suas respectivas notas, na ordem alfabética. Para isso, foi criado uma função BubbleSort.
+- **Atividade-b2-4**: Simulação de lista de compras. É possível inserir novos produtos e realizar a sua compra. Foi utilizado um conjunto de conceitos como structs, ponteiros, bubbleSort, entre outros.
 
 ## Licença
 
