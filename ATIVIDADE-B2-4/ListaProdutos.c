@@ -1,6 +1,5 @@
 // ADS - 2º Semestre
-// Desenvolvido por (e somente por): Cristian Daniel
-// OBS: O mesmo se aplica as outras atividades
+// Desenvolvido por: Cristian Daniel
 
 #include <stdio.h>
 #include <stdlib.h>
