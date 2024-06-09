@@ -26,3 +26,5 @@ Este é um repositório de entrega das atividades realizadas em linguagem C para
 ## Licença
 
 Este projeto está licenciado sob a [Licença MIT](LICENSE).
+
+[![Hits](https://hits.sh/github.com/CristianDaniel1/FATEC-PEM-2024-1-2040482322015-CRISTIAN.svg)](https://hits.sh/github.com/CristianDaniel1/FATEC-PEM-2024-1-2040482322015-CRISTIAN)
